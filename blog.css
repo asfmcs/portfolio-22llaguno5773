@@ -1,0 +1,114 @@
+.logo {
+  width: 140px;
+  float: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 15px;
+  font-family: 'Cedarville Cursive', cursive;
+  line-height: 40px;
+}
+header {
+   border-top: 12px solid rgba(255, 177, 183, 0.753);
+}
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+nav {
+  text-align: right;
+  padding-right: 90px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li{
+  display: inline-block;
+  margin-left: 80px;
+  padding-top: 20px;
+
+  position: relative;
+}
+nav a {
+  color: thistle;
+  text-decoration: underline;
+  font-family: 'EB Garamond', serif;
+  font-size: 25px;
+}
+nav a:hover {
+  color: rgba(138, 138, 138, 0.822);
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: rgba(138, 138, 138, 0.822);
+  
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+nav a:hover::before {
+  width: 100%;
+}
+.gallery img {
+  width: 320px;
+  padding: 10px;
+  transition: 1s;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+.gallery img:hover {
+  transform: scale(1.050);
+}
+table {
+  font-family: 'EB Garamond', serif;
+  color: rgba(138, 138, 138, 0.822);
+  font-size: 20px;
+  width: 700px;
+  display: inline-table;
+  margin-left: 280px;
+  margin-right: 150px;
+  padding-bottom: 35px;
+}
+th, td {
+  padding: 30px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+thead {
+  color: thistle;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 40px;
+  padding-bottom: 0px;
+}
+.alignleft {
+  text-align: left;
+}
+:target {
+  -webkit-animation: target-fade 2s 1;
+  -moz-animation: target-fade 2s 1;
+}
+@-webkit-keyframes target-fade {
+  0% { background-color: rgba(0,0,0,.1); }
+  100% { background-color: rgba(0,0,0,0); }
+}
+@-moz-keyframes target-fade {
+  0% { background-color: rgba(0,0,0,.1); }
+  100% { background-color: rgba(0,0,0,0); }
+}
+#tablehtml {
+  text-transform: lowercase;
+}
+#tablecss {
+  text-transform: lowercase;
+}
+
+/* I investigated and implemented the text transform property in order to change HTML and CSS (my table's headings) to all lowercase letters! */

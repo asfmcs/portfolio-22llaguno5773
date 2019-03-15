@@ -1,0 +1,44 @@
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  margin: 0 !important;
+  padding-top: 80px;
+  font-size: 40px;
+  color:lightgray;
+  text-shadow: 1.6px 1.6px mistyrose;
+}
+h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  text-align: center;
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 60px;
+  color: lightgray;
+  text-shadow: 2.3px 2.3px mistyrose;
+}
+p {
+  border-top: 12px solid rgba(176, 196, 222, 0.658);
+  border-bottom: 12px solid rgba(176, 196, 222, 0.658);
+  text-align: center;
+  font-family: 'Cedarville Cursive', cursive;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 25px;
+  color: rgb(196, 195, 195);
+}
+img {
+  width: 500px;
+  display: block;
+  margin-top: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0;
+}
+h1:hover {
+  transform: scale(1.050);
+  transition: 1s;
+}
+p:hover {
+  color: rgb(255, 210, 218);
+  transition: 1s;
+}
