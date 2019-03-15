@@ -1,0 +1,88 @@
+img {
+  width:270px;
+}
+h1 {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  font-size: 50px;
+  border-bottom: 6px solid rgb(255, 204, 94);
+}
+h2 {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  font-size: 40px;
+  }
+h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  }
+.textj {
+  text-align: center;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 25px;
+}
+.textm {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 25px;
+}
+.h211 {
+  text-align: left;
+}
+.centerimg {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 40%;
+border-bottom: 6px solid rgb(255, 204, 94);
+}
+.container {
+width: 80%;
+margin: 0 auto;
+}
+header {
+  background: rgb(255, 204, 94)
+}
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+nav {
+  text-align: left;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 20px;
+
+  position: relative;
+}
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 25px;
+}
+nav a:hover {
+  color: crimson;
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #111;
+  
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+nav a:hover::before {
+  width: 100%;
+}
