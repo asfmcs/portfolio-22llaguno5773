@@ -74,7 +74,7 @@ h2 {
   font-size: 60px;
   color: lightgray;
   text-shadow: 2.3px 2.3px mistyrose;
-  border-top: 12px solid rgba(253, 225, 221, 0.993)
+  border-top: 12px solid rgba(253, 225, 221, 0.993);
 }
 #slides {
   padding-top: 17px;

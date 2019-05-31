@@ -1,0 +1,523 @@
+
+<html>
+<head>
+<title>Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Cormorant+Garamond|Dawning+of+a+New+Day" rel="stylesheet">
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    background-color: #F5F5F5;
+}
+
+h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  margin: 0 !important;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  color: lightgray;
+  text-shadow: 2px 2px mistyrose;
+  border-top: 12px solid rgba(253, 225, 221, 0.993);
+}
+</style>
+
+</head>
+
+<body> <center>
+<h1>Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    /* Remember to check why it won't work with PINK ghost.. */
+
+function start(){
+    var pink = new Color(255,192,203);
+    
+    var background = new Rectangle(getWidth(),getHeight());
+    background.setColor(Color.black);
+    background.setPosition(0,0);
+    add(background);
+    
+    drawMaze();
+    drawPacman(105,214);
+    drawGhost(240,200, Color.red);
+    drawGhost(290,200, Color.cyan);
+    drawGhost(340,200, pink);
+    drawGhost(190,200, Color.orange);
+}
+
+function drawMaze(){
+    var line = new Line(0,135,400,135);
+    line.setColor(Color.blue);
+    line.setLineWidth(3);
+    add(line);
+    
+    var linex = new Line(0,138,400,138);
+    linex.setColor(Color.purple);
+    linex.setLineWidth(3);
+    add(linex);
+    
+    var line1 = new Line(0,115,400,115);
+    line1.setColor(Color.blue);
+    line1.setLineWidth(3);
+    add(line1);
+    
+    var line4 = new Line(0,80,355,80);
+    line4.setColor(Color.blue);
+    line4.setLineWidth(3);
+    add(line4);
+    
+    var line5 = new Line(0,60,355,60);
+    line5.setColor(Color.blue);
+    line5.setLineWidth(3);
+    add(line5);
+    
+    var line6 = new Line(355,60,355,80);
+    line6.setColor(Color.blue);
+    line6.setLineWidth(3);
+    add(line6);
+    
+    var line7 = new Line(0,1,400,1);
+    line7.setColor(Color.blue);
+    line7.setLineWidth(3);
+    add(line7);
+    
+    var line8 = new Line(0,21,400,21);
+    line8.setColor(Color.blue);
+    line8.setLineWidth(3);
+    add(line8);
+    
+    var circle2 = new Circle(7);
+	circle2.setColor(Color.yellow);
+	circle2.setPosition(20,98);
+	add(circle2);
+	
+	var circle3 = new Circle(7);
+	circle3.setColor(Color.yellow);
+	circle3.setPosition(60,98);
+	add(circle3);
+	
+	var circle4 = new Circle(7);
+	circle4.setColor(Color.yellow);
+	circle4.setPosition(100,98);
+	add(circle4);
+	
+	var circle5 = new Circle(7);
+	circle5.setColor(Color.yellow);
+	circle5.setPosition(140,98);
+	add(circle5);
+    
+    var circle6 = new Circle(7);
+	circle6.setColor(Color.yellow);
+	circle6.setPosition(180,98);
+	add(circle6);
+	
+	var circle7 = new Circle(7);
+	circle7.setColor(Color.yellow);
+	circle7.setPosition(220,98);
+	add(circle7);
+	
+	var circle8 = new Circle(7);
+	circle8.setColor(Color.yellow);
+	circle8.setPosition(260,98);
+	add(circle8);
+	
+	var circle9 = new Circle(7);
+	circle9.setColor(Color.yellow);
+	circle9.setPosition(300,98);
+	add(circle9);
+	
+	var circle10 = new Circle(7);
+	circle10.setColor(Color.yellow);
+	circle10.setPosition(340,98);
+	add(circle10);
+	
+	var circle11 = new Circle(7);
+	circle11.setColor(Color.yellow);
+	circle11.setPosition(380,98);
+	add(circle11);
+	
+	var circle12 = new Circle(7);
+	circle12.setColor(Color.yellow);
+	circle12.setPosition(380,69);
+	add(circle12);
+	
+	var circle13 = new Circle(7);
+	circle13.setColor(Color.yellow);
+	circle13.setPosition(380,40);
+	add(circle13);
+	
+	var circle14 = new Circle(7);
+	circle14.setColor(Color.yellow);
+	circle14.setPosition(340,40);
+	add(circle14);
+	
+	var circle15 = new Circle(7);
+	circle15.setColor(Color.yellow);
+	circle15.setPosition(300,40);
+	add(circle15);
+	
+	var circle16 = new Circle(7);
+	circle16.setColor(Color.yellow);
+	circle16.setPosition(260,40);
+	add(circle16);
+	
+	var circle17 = new Circle(7);
+	circle17.setColor(Color.yellow);
+	circle17.setPosition(220,40);
+	add(circle17);
+	
+	var circle18 = new Circle(7);
+	circle18.setColor(Color.yellow);
+	circle18.setPosition(180,40);
+	add(circle18);
+	
+	var circle19 = new Circle(7);
+	circle19.setColor(Color.yellow);
+	circle19.setPosition(140,40);
+	add(circle19);
+	
+	var circle20 = new Circle(7);
+	circle20.setColor(Color.yellow);
+	circle20.setPosition(100,40);
+	add(circle20);
+	
+	var circle21 = new Circle(7);
+	circle21.setColor(Color.yellow);
+	circle21.setPosition(60,40);
+	add(circle21);
+	
+	var circle22 = new Circle(7);
+	circle22.setColor(Color.yellow);
+	circle22.setPosition(20,40);
+	add(circle22);
+	
+	var line22 = new Line(0,290,400,290);
+    line22.setColor(Color.blue);
+    line22.setLineWidth(3);
+    add(line22);
+    
+    var liney = new Line(0,287,400,287);
+    liney.setColor(Color.purple);
+    liney.setLineWidth(3);
+    add(liney);
+    
+    var line23 = new Line(0,310,400,310);
+    line23.setColor(Color.blue);
+    line23.setLineWidth(3);
+    add(line23);
+    
+    var line24 = new Line(50,310,50,430);
+    line24.setColor(Color.blue);
+    line24.setLineWidth(3);
+    add(line24);
+    
+    var line25 = new Line(70,310,70,430);
+    line25.setColor(Color.blue);
+    line25.setLineWidth(3);
+    add(line25);
+    
+    var line26 = new Line(120,310,120,430);
+    line26.setColor(Color.blue);
+    line26.setLineWidth(3);
+    add(line26);
+    
+    var line27 = new Line(140,310,140,430);
+    line27.setColor(Color.blue);
+    line27.setLineWidth(3);
+    add(line27);
+    
+    var line28 = new Line(190,310,190,430);
+    line28.setColor(Color.blue);
+    line28.setLineWidth(3);
+    add(line28);
+    
+    var line29 = new Line(210,310,210,430);
+    line29.setColor(Color.blue);
+    line29.setLineWidth(3);
+    add(line29);
+    
+    var line30 = new Line(260,310,260,430);
+    line30.setColor(Color.blue);
+    line30.setLineWidth(3);
+    add(line30);
+    
+    var line31 = new Line(280,310,280,430);
+    line31.setColor(Color.blue);
+    line31.setLineWidth(3);
+    add(line31);
+    
+    var line32 = new Line(260,430,280,430);
+    line32.setColor(Color.blue);
+    line32.setLineWidth(3);
+    add(line32);
+    
+    var line33 = new Line(190,430,210,430);
+    line33.setColor(Color.blue);
+    line33.setLineWidth(3);
+    add(line33);
+    
+    var line34 = new Line(120,430,140,430);
+    line34.setColor(Color.blue);
+    line34.setLineWidth(3);
+    add(line34);
+    
+    var line35 = new Line(50,430,70,430);
+    line35.setColor(Color.blue);
+    line35.setLineWidth(3);
+    add(line35);
+    
+    var circle23 = new Circle(7);
+	circle23.setColor(Color.yellow);
+	circle23.setPosition(23,335);
+	add(circle23);
+	
+	var circle24 = new Circle(7);
+	circle24.setColor(Color.yellow);
+	circle24.setPosition(23,375);
+	add(circle24);
+	
+	var circle25 = new Circle(7);
+	circle25.setColor(Color.yellow);
+	circle25.setPosition(23,415);
+	add(circle25);
+	
+	var circle26 = new Circle(7);
+	circle26.setColor(Color.yellow);
+	circle26.setPosition(23,455);
+	add(circle26);
+	
+	var circle27 = new Circle(7);
+	circle27.setColor(Color.yellow);
+	circle27.setPosition(60,455);
+	add(circle27);
+	
+	var circle28 = new Circle(7);
+	circle28.setColor(Color.yellow);
+	circle28.setPosition(95,455);
+	add(circle28);
+	
+	var circle29 = new Circle(7);
+	circle29.setColor(Color.yellow);
+	circle29.setPosition(130,455);
+	add(circle29);
+	
+	var circle30 = new Circle(7);
+	circle30.setColor(Color.yellow);
+	circle30.setPosition(164,455);
+	add(circle30);
+	
+	var circle31 = new Circle(7);
+	circle31.setColor(Color.yellow);
+	circle31.setPosition(200,455);
+	add(circle31);
+	
+	var circle32 = new Circle(7);
+	circle32.setColor(Color.yellow);
+	circle32.setPosition(234,455);
+	add(circle32);
+	
+	var circle33 = new Circle(7);
+	circle33.setColor(Color.yellow);
+	circle33.setPosition(270,455);
+	add(circle33);
+	
+	var circle34 = new Circle(7);
+	circle34.setColor(Color.yellow);
+	circle34.setPosition(304,455);
+	add(circle34);
+	
+	var circle35 = new Circle(7);
+	circle35.setColor(Color.yellow);
+	circle35.setPosition(339,455);
+	add(circle35);
+	
+	var circleee = new Circle(7);
+	circleee.setColor(Color.yellow);
+	circleee.setPosition(375,455);
+	add(circleee);
+	
+	var circle36 = new Circle(7);
+	circle36.setColor(Color.yellow);
+	circle36.setPosition(95,335);
+	add(circle36);
+	
+	var circle37 = new Circle(7);
+	circle37.setColor(Color.yellow);
+	circle37.setPosition(95,415);
+	add(circle37);
+	
+	var circle38 = new Circle(7);
+	circle38.setColor(Color.yellow);
+	circle38.setPosition(95,375);
+	add(circle38);
+	
+	var circle39 = new Circle(7);
+	circle39.setColor(Color.yellow);
+	circle39.setPosition(164,335);
+	add(circle39);
+	
+	var circle40 = new Circle(7);
+	circle40.setColor(Color.yellow);
+	circle40.setPosition(164,375);
+	add(circle40);
+	
+	var circle41 = new Circle(7);
+	circle41.setColor(Color.yellow);
+	circle41.setPosition(164,415);
+	add(circle41);
+	
+	var circle42 = new Circle(7);
+	circle42.setColor(Color.yellow);
+	circle42.setPosition(234,335);
+	add(circle42);
+	
+	var circle43 = new Circle(7);
+	circle43.setColor(Color.yellow);
+	circle43.setPosition(234,375);
+	add(circle43);
+	
+	var circle44 = new Circle(7);
+	circle44.setColor(Color.yellow);
+	circle44.setPosition(234,415);
+	add(circle44);
+	
+	var circle45 = new Circle(7);
+	circle45.setColor(Color.yellow);
+	circle45.setPosition(304,335);
+	add(circle45);
+	
+	var circle46 = new Circle(7);
+	circle46.setColor(Color.yellow);
+	circle46.setPosition(304,375);
+	add(circle46);
+	
+	var circle47 = new Circle(7);
+	circle47.setColor(Color.yellow);
+	circle47.setPosition(304,415);
+	add(circle47);
+	
+	var circle48 = new Circle(7);
+	circle48.setColor(Color.yellow);
+	circle48.setPosition(339,335);
+	add(circle48);
+	
+	var circle49 = new Circle(7);
+	circle49.setColor(Color.yellow);
+	circle49.setPosition(339,375);
+	add(circle49);
+	
+	var circle50 = new Circle(7);
+	circle50.setColor(Color.yellow);
+	circle50.setPosition(339,415);
+	add(circle50);
+	
+	var circle51 = new Circle(7);
+	circle51.setColor(Color.yellow);
+	circle51.setPosition(375,335);
+	add(circle51);
+	
+	var circle52 = new Circle(7);
+	circle52.setColor(Color.yellow);
+	circle52.setPosition(375,375);
+	add(circle52);
+	
+	var circle53 = new Circle(7);
+	circle53.setColor(Color.yellow);
+	circle53.setPosition(375,415);
+	add(circle53);
+}
+
+function drawGhost(centerX,centerY,color){
+    var circle = new Circle(20);
+    circle.setColor(color);
+	circle.setPosition(centerX, centerY);
+	add(circle);
+	
+	var rect = new Rectangle(40, 40);
+	rect.setColor(color);
+	rect.setPosition(centerX-20,centerY);
+	add(rect);
+	
+	var gcircle1 = new Circle(7);
+	gcircle1.setColor(color);
+	gcircle1.setPosition(centerX + 13,centerY + 40);
+	add(gcircle1);
+	
+	var gcircle2 = new Circle(7);
+	gcircle2.setColor(color);
+	gcircle2.setPosition(centerX,centerY + 40);
+	add(gcircle2);
+	
+	var gcircle3 = new Circle(7);
+	gcircle3.setColor(color);
+	gcircle3.setPosition(centerX-13,centerY + 40);
+	add(gcircle3);
+	
+	var eye1 = new Circle(5.5);
+	eye1.setColor(Color.white);
+	eye1.setPosition(centerX-8.5,centerY);
+	add(eye1);
+	
+	var eye2 = new Circle(5.5);
+	eye2.setColor(Color.white);
+	eye2.setPosition(centerX + 8.5,centerY);
+	add(eye2);
+	
+	var minieye1 = new Circle(2.5);
+	minieye1.setColor(Color.blue);
+	minieye1.setPosition(centerX-5.5,centerY);
+	add(minieye1);
+	
+	var minieye2 = new Circle(2.5);
+	minieye2.setColor(Color.blue);
+	minieye2.setPosition(centerX + 11.5,centerY);
+	add(minieye2);
+}
+
+function drawPacman(centerX, centerY) {
+    var pac = new Arc(50, 30, 320, 0);
+    pac.setColor(Color.yellow);
+    pac.setPosition(centerX, centerY);
+    add(pac);
+    
+    var circle1 = new Circle(7);
+	circle1.setColor(Color.black);
+	circle1.setPosition(centerX + 9,centerY - 26);
+	add(circle1);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+<center> </body>
+</html>

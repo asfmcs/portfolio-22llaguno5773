@@ -1,0 +1,121 @@
+
+<html>
+<head>
+<title>Ghosts</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Cormorant+Garamond|Dawning+of+a+New+Day" rel="stylesheet">
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    background-color: #F5F5F5;
+}
+
+h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  margin: 0 !important;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  color: lightgray;
+  text-shadow: 2px 2px mistyrose;
+  border-top: 12px solid rgba(253, 225, 221, 0.993);
+}
+</style>
+
+</head>
+
+<body> <center>
+<h1>Ghosts</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(centerX, centerY, Color.red);
+    drawGhost(100,100, Color.green);
+    drawGhost(300, 200, Color.black);
+    drawGhost(40, 300, Color.orange);
+    drawGhost(300, 50, Color.yellow);
+}
+
+function drawGhost(centerX, centerY, color){
+    var circle = new Circle(40);
+    circle.setColor(color);
+	circle.setPosition(centerX, centerY);
+	add(circle);
+	
+	var rect = new Rectangle(80, 80);
+	rect.setColor(color);
+	rect.setPosition(centerX-40,centerY);
+	add(rect);
+	
+	var circle1 = new Circle(14);
+	circle1.setColor(color);
+	circle1.setPosition(centerX + 26,centerY + 80);
+	add(circle1);
+	
+	var circle2 = new Circle(14);
+	circle2.setColor(color);
+	circle2.setPosition(centerX,centerY + 80);
+	add(circle2);
+	
+	var circle3 = new Circle(14);
+	circle3.setColor(color);
+	circle3.setPosition(centerX-26,centerY + 80);
+	add(circle3);
+	
+	var eye1 = new Circle(11);
+	eye1.setColor(Color.white);
+	eye1.setPosition(centerX-17,centerY);
+	add(eye1);
+	
+	var eye2 = new Circle(11);
+	eye2.setColor(Color.white);
+	eye2.setPosition(centerX + 17,centerY);
+	add(eye2);
+	
+	var minieye1 = new Circle(5);
+	minieye1.setColor(Color.blue);
+	minieye1.setPosition(centerX-11,centerY);
+	add(minieye1);
+	
+	var minieye2 = new Circle(5);
+	minieye2.setColor(Color.blue);
+	minieye2.setPosition(centerX + 23,centerY);
+	add(minieye2);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+<center> </body>
+</html>

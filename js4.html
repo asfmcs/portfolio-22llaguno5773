@@ -1,0 +1,98 @@
+
+<html>
+<head>
+<title>Pac-Man</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Cormorant+Garamond|Dawning+of+a+New+Day" rel="stylesheet">
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    background-color: #F5F5F5;
+}
+
+h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  margin: 0 !important;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  color: lightgray;
+  text-shadow: 2px 2px mistyrose;
+  border-top: 12px solid rgba(253, 225, 221, 0.993);
+}
+</style>
+
+</head>
+
+<body>
+<center> <h1>Pac-Man</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start() {
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    
+    drawPacman(200, 200);
+}
+
+function drawPacman(centerX, centerY) {
+    var pac = new Arc(100, 30, 320, 0);
+    pac.setColor(Color.yellow);
+    pac.setPosition(centerX, centerY);
+    add(pac);
+    
+    var circle1 = new Circle(14);
+	circle1.setColor(Color.black);
+	circle1.setPosition(centerX + 18,centerY - 52);
+	add(circle1);
+	
+	var circle2 = new Circle(13);
+	circle2.setColor(Color.yellow);
+	circle2.setPosition(centerX + 60, centerY + 6);
+	add(circle2);
+	
+	var circle3 = new Circle(13);
+	circle3.setColor(Color.yellow);
+	circle3.setPosition(centerX + 105,centerY + 6);
+	add(circle3);
+	
+	var circle4 = new Circle(13);
+	circle4.setColor(Color.yellow);
+	circle4.setPosition(centerX + 150,centerY + 6);
+	add(circle4);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+<center> </body>
+</html>
